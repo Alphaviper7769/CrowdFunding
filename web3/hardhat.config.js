@@ -1,4 +1,5 @@
 require("@matterlabs/hardhat-zksync-solc");
+require('dotenv').config()
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -24,6 +25,10 @@ module.exports = {
       chainId: 324,
       zksync: true,
     },
+    sepiola:{
+      url:'https://rpc.ankr.com/eth_sepolia',
+      accounts: [`0x${process.env.PRIVATE_KEY_REAL}`]
+    }
   },
   paths: {
     artifacts: "./artifacts-zk",
